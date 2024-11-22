@@ -5,29 +5,33 @@ body {
     height: 100%;
     margin: 0;
 }
+
 .loginContainer {
-    width: 300px;
+    width: 400px;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;
     text-align: center;
 }
+
 .loginContainer h1 {
-    font-size: 24px;
+    font-size: 36px;
     color: #0073e6;
     margin-bottom: 20px;
-} 
+}
+
 #idInputBox, #pwInputBox {
-    width: 100%;
+    width: 70%;
     padding: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 14px;
 }
+
 #loginButton {
-    width: 100%;
+    width: 30%;
     padding: 10px;
     background-color: #005f99;
     color: #fff;
@@ -36,14 +40,18 @@ body {
     font-size: 16px;
     cursor: pointer;
 }
+
 #loginButton:hover {
     background-color: #004a80;
 }
+
 .loginContainer .optionButtons {
     margin-top: 15px;
 }
+
 .loginContainer .optionButtons button {
     background-color: transparent;
+    width: 20%;
     color: #005f99;
     border: 1px solid #005f99;
     padding: 5px 10px;
@@ -52,7 +60,26 @@ body {
     cursor: pointer;
     margin: 0 5px;
 }
+
 .loginContainer .optionButtons button:hover {
     background-color: #005f99;
     color: #fff;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 12px;
+    /* margin-top: 3px; */
+}
+
+input {
+    border: 1px solid #0056a3; /* 기본 테두리 색상 */
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+}
+
+input:focus {
+    outline: none;
+    border-color: #003d75; /* 포커스 시 테두리 색상 */
 }

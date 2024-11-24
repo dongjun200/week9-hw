@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.findPwContainer {
+    width: 400px;
+
+}
+
+.findPwContainer h1 {
+    margin-bottom: 100px;
+}
+
+/* .emailElements {
+    width: ;
+} */
+
+#findPwContainer form{
+    display: block;
+    text-align: left;
+}

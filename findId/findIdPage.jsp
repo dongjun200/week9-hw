@@ -8,7 +8,16 @@
 </head>
 
 <body>
-    <h1>아이디 찾기 페이지입니다.</h1>
+    <div class="findIdContainer">
+        <h1>아이디 찾기</h1>
+        
+        <form class="emailElements">
+            <label id="emailLabel" for="userEmail">이메일</label>
+            <input type="email" name="userEmail" placeholder="이메일">
+        </form>
 
-    <script src="findIdPage.js"></script>
+        <button id="findIdButton" type="submit">아이디 찾기</button>
+
+        <script src="findIdPage.js"></script>
+    </div>
 </body>

@@ -1,0 +1,62 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signupContainer{
+    width: 400px;
+}
+
+
+
+.signupContainer h1{
+    text-align: center;
+    color: #0073e6;
+    margin-bottom: 20px;
+}
+
+.signupContainer label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.signupContainer input{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 24px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+}
+
+.signupContainer select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #0056a3;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.dropdownContainer{
+    display: flex;
+}
+
+.dropdownContainer div{
+    flex:1;
+}
+
+#signupButton{
+    width: 100%;
+    padding: 10px;
+    background-color: #0056a3;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#signupButton:hover {
+    background-color: #003d75;
+
+}

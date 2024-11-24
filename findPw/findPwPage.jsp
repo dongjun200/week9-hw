@@ -8,7 +8,21 @@
 </head>
 
 <body>
-    <h1>비밀번호 찾기 페이지입니다.</h1>
+    <div class="findPwContainer">
+        <h1>비밀번호 찾기</h1>
+        
+        <form>
+            <label>아이디</label>
+            <input type="text" name="userId">
+
+            <label>이메일</label>
+            <input type="email" name="userEmail">
+        </form>
+
+        <button id="findPwButton" type="submit">비밀번호 찾기</button>
+
+        <script src="findPwPage.js"></script>
+    </div>
 
     <script src="findPwPage.js"></script>
 </body>

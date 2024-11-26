@@ -17,7 +17,6 @@ const createErrorMessage = (message) => {
     return errorMessage;
 };
 
-// 에러 메시지 제거 함수
 const removeErrorMessage = (input) => {
     const nextElement = input.nextElementSibling;
     if (nextElement && nextElement.classList.contains("errorMessage")) {
@@ -60,6 +59,8 @@ function handleLogin(event) {
         event.preventDefault(); // 폼 제출 방지
     }
 }
+
+
 // const createErrorMessage = (message) => {
 //     const errorMessage = document.createElement("div");
 //     errorMessage.classList.add("errorMessage");

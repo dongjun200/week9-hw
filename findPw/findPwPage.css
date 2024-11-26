@@ -17,7 +17,11 @@ body {
     width: ;
 } */
 
-#findPwContainer form{
+.findPwContainer label{
     display: block;
     text-align: left;
+}
+
+#findPwButton {
+    text-align: center;
 }

@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+.schedule-container {
+    width: 60%;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logout-btn, .add-btn {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.selected-date {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.schedule-list {
+    max-height: 400px; /* 스크롤 조건 설정 */
+    overflow-y: auto; /* 스크롤 추가 */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    background: #f9f9f9;
+}
+
+.schedule-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.schedule-item:last-child {
+    border-bottom: none;
+}
+
+.time, .description, .author {
+    width: 20%;
+    text-align: left;
+    font-size: 1em;
+}
+
+.edit-btn, .delete-btn {
+    margin-left: 5px;
+    background: #ff6b6b;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 8px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background: #ffa502;
+}

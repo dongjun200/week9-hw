@@ -13,7 +13,7 @@
         <form>
             <input id="idInputBox" type="text" name="username" maxLength="20" placeholder="아이디" oninput="validateIdInput()">
             <input id="pwInputBox" type="password" name="password" maxLength="20" placeholder="비밀번호" oninput="validatePwInput()">
-            <button id="loginButton" type="submit">로그인</button>
+            <button id="loginButton" type="submit" onclick="handleLogin()">로그인</button>
         </form>
         <div class="optionButtons">
             <button onclick="location.href='../signup/signupPage.jsp'">회원가입</button>

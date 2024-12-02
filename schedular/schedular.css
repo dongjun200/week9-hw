@@ -36,8 +36,8 @@ body {
 }
 
 .schedule-list {
-    max-height: 400px; /* 스크롤 조건 설정 */
-    overflow-y: auto; /* 스크롤 추가 */
+    max-height: 400px; 
+    overflow-y: auto; 
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 10px;

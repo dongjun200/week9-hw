@@ -17,6 +17,7 @@
 <%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Schedule Manager</title>
     <link rel="stylesheet" type="text/css" href="manageSchedule.css">
@@ -24,55 +25,24 @@
 </head>
 <body>
     <div class="calendar-container">
+
+
         <div class="header">
             <button id="prevYear" onclick="changeYear(-1)">&lt;</button>
             <span id="currentYear">2024</span>
             <button id="nextYear" onclick="changeYear(1)">&gt;</button>
         </div>
+
+
         <div class="month-buttons">
             <% for (int i = 1; i <= 12; i++) { %>
                 <button class="month-btn" data-month="<%= i %>" onclick="loadCalendar(<%= i %>)"><%= i %>월</button>
             <% } %>
         </div>
+
+
         <div class="calendar-grid">
-            <%
-                // DB 연결
-                String url = "jdbc:mysql://localhost:3306/scheduleDB";
-                String user = "root";
-                String password = "password";
 
-                try (Connection conn = DriverManager.getConnection(url, user, password)) {
-                    String query = "SELECT day, COUNT(schedule_id) AS count FROM schedules WHERE month = ? AND year = ? GROUP BY day";
-                    PreparedStatement pstmt = conn.prepareStatement(query);
-
-                    // 초기값 (11월 기준)
-                    int currentMonth = 11;
-                    int currentYear = 2024;
-
-                    pstmt.setInt(1, currentMonth);
-                    pstmt.setInt(2, currentYear);
-                    ResultSet rs = pstmt.executeQuery();
-
-                    // 일정 데이터 저장
-                    int[] schedules = new int[31];
-                    while (rs.next()) {
-                        schedules[rs.getInt("day") - 1] = rs.getInt("count");
-                    }
-
-                    // 캘린더 출력
-                    for (int i = 0; i < 31; i++) {
-                        String todayClass = (i + 1 == 19) ? "today" : ""; // 오늘 날짜 강조
-                        %>
-                            <div class="day <%= todayClass %>">
-                                <span class="date"><%= i + 1 %></span>
-                                <span class="schedule-count"><%= schedules[i] %></span>
-                            </div>
-                        <%
-                    }
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            %>
         </div>
     </div>
 </body>

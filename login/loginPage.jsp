@@ -9,7 +9,7 @@
 
 <body>
     <div class="loginContainer">
-        <h1>Logind</h1>
+        <h1>Logidn</h1>
         <form>
             <input id="idInputBox" type="text" name="username" maxLength="20" placeholder="아이디" oninput="validateIdInput()">
             <input id="pwInputBox" type="password" name="password" maxLength="20" placeholder="비밀번호" oninput="validatePwInput()">

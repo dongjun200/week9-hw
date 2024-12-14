@@ -9,10 +9,10 @@
 
 <body>
     <div class="loginContainer">
-        <h1>Logidn</h1>
+        <h1>Login</h1>
         <form>
-            <input id="idInputBox" type="text" name="username" maxLength="20" placeholder="아이디" oninput="validateIdInput()">
-            <input id="pwInputBox" type="password" name="password" maxLength="20" placeholder="비밀번호" oninput="validatePwInput()">
+            <input id="idInputBox" type="text" maxLength="20" placeholder="아이디" oninput="validateIdInput()">
+            <input id="pwInputBox" type="password" maxLength="20" placeholder="비밀번호" oninput="validatePwInput()">
             <button id="loginButton" type="submit" onclick="handleLogin()">로그인</button>
         </form>
         <div class="optionButtons">

@@ -5,19 +5,18 @@ body {
 }
 
 .findIdContainer {
-    width: 400px;
-
+    width: 200px;
 }
 
 .findIdContainer h1 {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
-
-/* .emailElements {
-    width: ;
-} */
 
 #emailLabel{
     display: block;
     text-align: left;
+}
+
+#findeIdButton{
+    text-align: center;
 }

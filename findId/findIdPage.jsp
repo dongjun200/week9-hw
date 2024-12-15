@@ -13,7 +13,7 @@
         
         <form class="emailElements">
             <label id="emailLabel" for="userEmail">이메일</label>
-            <input type="email" name="userEmail" placeholder="이메일">
+            <input type="email" name="userEmail">
         </form>
 
         <button id="findIdButton" type="submit">아이디 찾기</button>

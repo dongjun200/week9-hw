@@ -8,20 +8,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Schedule Details</title>
-    <link rel="stylesheet" type="text/css" href="scheduleDetails.css">
-    <script src="scheduleDetails.js"></script>
+    <title>스케줄러</title>
+    <link rel="stylesheet" type="text/css" href="scheduler.css">
+
 </head>
 <body>
-    <div class="schedule-container">
-        <div class="header">
-            <button class="logout-btn" onclick="logout()">로그아웃</button>
-            <span class="selected-date"><%= request.getParameter("date") %></span>
-            <button class="add-btn" onclick="openAddSchedule()">일정 추가</button>
-        </div>
-        <div class="schedule-list">
 
+    <div>
+        <div id="yearBox">
+            <input type="button" value="2024">
         </div>
+    
     </div>
+
+    <script src="scheduler.js"></script>
+
 </body>
 </html>

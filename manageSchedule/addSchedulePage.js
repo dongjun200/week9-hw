@@ -10,5 +10,3 @@ button.className = "currentDate";
 button.classList.add('currentDate');
 
 dateContainer.appendChild(button);
-
-

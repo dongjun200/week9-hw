@@ -5,9 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>일정관리페이지</title>
+    <title>일정추가페이지</title>
 
-    <link rel="stylesheet" type="text/css" href="manageSchedule.css">
+    <link rel="stylesheet" type="text/css" href="addSchedulePage.css">
 
 </head>
 
@@ -16,12 +16,13 @@
 
     <div id="container">
         <div id="scheduleContainer"></div>
-        <input id="addScheduleButton" type="button" value="일정 추가" onclick="location.href='addSchedulePage.jsp'">
+        <input id="saveScheduleButton" type="button" value="저장" onclick="location.href='manageSchedule.jsp'">
+
     </div>
 
 
 
-    <script src="manageSchedule.js"></script>
+    <script src="addSchedulePage.js"></script>
 </body>
 
 </html>

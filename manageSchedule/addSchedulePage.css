@@ -27,7 +27,7 @@
     border-radius: 50px;
 }
 
-#addScheduleButton{
+#saveScheduleButton{
     background-color: #ffffff;
     width: 100px;
     height: 40px;
@@ -36,6 +36,6 @@
     border-radius: 10px;
 }
 
-#addScheduleButton:hover {
+#saveScheduleButton:hover {
     background-color: #005f99;
 }

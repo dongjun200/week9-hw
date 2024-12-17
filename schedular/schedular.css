@@ -1,0 +1,61 @@
+#yearContainer{
+    display: flex;
+    gap: 10px; 
+    justify-content: center; 
+}
+
+.yearButtons {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border: 1px solid #005f99;
+    border-radius: 5px;
+}
+
+.yearButtons:hover {
+    background-color: #005f99;
+
+}
+
+#monthContainer{
+    display: flex;
+    gap: 10px; 
+    justify-content: center; 
+}
+
+.monthButtons {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    margin: 5px;
+    border: 1px solid #005f99;
+    border-radius: 5px;
+}
+
+.monthButtons:hover {
+    background-color: #005f99;
+}
+
+.currentMonth {
+    color : #d3de0d;
+    font-weight: bold;
+}
+
+#dateContainer{
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px; 
+    justify-content: center; 
+}
+
+.dateButtons {
+    flex: 1 0 calc(100% / 8 - 10px); 
+    padding: 10px 20px;
+    background-color: #ffffff;
+    margin: 5px;
+    border: 1px solid #005f99;
+    border-radius: 5px;
+}
+
+.dateButtons:hover {
+    background-color: #005f99;
+
+}

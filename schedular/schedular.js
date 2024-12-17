@@ -1,42 +1,37 @@
-// function openAddSchedule() {
-//     alert("일정 추가 화면을 여는 로직을 여기에 추가하세요.");
-// }
+const currentMonth = new Date().getMonth() + 1;
+const currentDate = new Date().getDate();
 
+console.log(currentMonth);
+console.log(currentDate);
 
-// function editSchedule(scheduleId) {
-//     const newDescription = prompt("새로운 일정을 입력하세요:");
-//     if (newDescription) {
-//         const xhr = new XMLHttpRequest();
-//         xhr.open("POST", "editSchedule.jsp", true);
-//         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-//         xhr.onreadystatechange = function () {
-//             if (xhr.readyState === 4 && xhr.status === 200) {
-//                 alert("일정이 수정되었습니다.");
-//                 location.reload(); 
-//             }
-//         };
-//         xhr.send(`scheduleId=${scheduleId}&description=${newDescription}`);
-//     }
-// }
+const monthContainer = document.getElementById('monthContainer');
+const dateContainer = document.getElementById('dateContainer');
 
-// function deleteSchedule(scheduleId) {
-//     if (confirm("일정을 삭제하시겠습니까?")) {
-//         const xhr = new XMLHttpRequest();
-//         xhr.open("POST", "deleteSchedule.jsp", true);
-//         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-//         xhr.onreadystatechange = function () {
-//             if (xhr.readyState === 4 && xhr.status === 200) {
-//                 alert("일정이 삭제되었습니다.");
-//                 location.reload(); 
-//             }
-//         };
-//         xhr.send(`scheduleId=${scheduleId}`);
-//     }
-// }
+for (var i = 1; i <= 12; i++) {
+    const button = document.createElement('input');
+    button.type = "button";
+    button.value = i + "월";
+    button.className = "monthButtons";
 
-// function logout() {
-//     location.href = "logout.jsp"; 
-// }
+    if(i == currentMonth){
+        button.classList.add("currentMonth")
+    }
 
+    monthContainer.appendChild(button);
 
+}
 
+for (var i = 1; i <= 31; i++) {
+    const button = document.createElement('input');
+    button.type = "button";
+    button.value = i ;
+    button.className = "dateButtons";
+
+    if(i == currentDate){
+        button.classList.add("currentDate")
+    }
+    button.setAttribute("onclick", "window.location.href='../manageSchedule/manageSchedule.jsp'")
+
+    dateContainer.appendChild(button);
+
+}

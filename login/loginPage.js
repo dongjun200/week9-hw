@@ -1,40 +1,53 @@
-const idRegex = /^(?=.*[a-z])(?=.*\d)[a-z\d]{8,20}$/;
-const pwRegex = /^(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*])[a-z\d!@#$%^&*]{8,20}$/;
+const idRegex = /^(?=.*[a-z])(?=.*\d)[a-z\d]{8,20}$/; 
+const pwRegex = /^(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*])[a-z\d!@#$%^&*]{8,20}$/; 
 
 const idInputBox = document.getElementById("idInputBox");
 const pwInputBox = document.getElementById("pwInputBox");
 
-function createErrorMessage(message){
-    const errorMessage = document.createElement("div");
-    errorMessage.textContent = message;
-    return errorMessage;
+const idErrorMessage = document.createElement("div");
+idErrorMessage.style.color = "red";
+idErrorMessage.style.fontSize = "12px";
+
+const pwErrorMessage = document.createElement("div");
+pwErrorMessage.style.color = "red";
+pwErrorMessage.style.fontSize = "12px";
+
+idInputBox.parentNode.insertBefore(idErrorMessage, idInputBox.nextSibling);
+pwInputBox.parentNode.insertBefore(pwErrorMessage, pwInputBox.nextSibling);
+
+function validateIdInput() {
+    if (!idRegex.test(idInputBox.value)) {
+        idErrorMessage.innerHTML = "아이디는 영문 소문자, 숫자만 포함한 8~20자여야 합니다.";
+    }  else if (!idRegex.test(idInputBox.value)) {
+        idErrorMessage.innerHTML = "아이디는 영문 소문자, 숫자만 포함한 8~20자여야 합니다.";
+    } else {
+        idErrorMessage.innerHTML = ""; 
+    }
 }
 
-function removeErrorMessage(input){
-
+function validatePwInput() {
+    if (!pwRegex.test(pwInputBox.value)) {
+        pwErrorMessage.innerHTML = "비밀번호는 영문 소문자, 숫자, 특수문자를 포함한 8~20자여야 합니다.";
+    } else if (!pwRegex.test(pwInputBox.value)) {
+        pwErrorMessage.innerHTML = "비밀번호는 영문 소문자, 숫자, 특수문자를 포함한 8~20자여야 합니다.";
+    } else {
+        pwErrorMessage.innerHTML = ""; 
+    }
 }
 
-// 
+function handleLogin(event) {
+    event.preventDefault(); 
+    validateIdInput();
+    validatePwInput();
 
-
-function validateInput(input, regex, errorMessage){
-    removeErrorMessage();
-    console.log("입력");
-    createErrorMessage(errorMessage);
-    input.style.bordercolor = "#0056a3";  
-    return true;
+    if (idInputBox.value.trim() === "" || pwInputBox.value.trim() === "") {
+        alert("아이디와 비밀번호를 모두 입력해주세요.");
+    } else if (!idRegex.test(idInputBox.value) || !pwRegex.test(pwInputBox.value)) {
+        alert("아이디 또는 비밀번호 형식이 올바르지 않습니다.");
+    } else {
+        alert("로그인 성공!"); // 조건이 만족할 경우 성공 메시지
+    }
 }
-
-function validateIdInput(){
-    validateInput(idInputBox, idRegex, "아이디는 영문 소문자, 숫자를 포함한 8~20자여야 합니다");
-}
-
-function validatePwInput(){
-    validateInput(pwInputBox, pwRegex, "비밀번호는 영문 소문자, 숫자, 특수문자를 포함한 8~20자여야 합니다");
-}
-
-
-// 
 
 // 아이디 입력하면 정규표현식 만족할때까지 에러메세지 출력
 
@@ -44,142 +57,3 @@ function validatePwInput(){
 // 아이디 한 문자씩 입력 
 // 정규식 만족하면 에러돔 없애기
 // 정규식 만족하지않으면 에러메세지 생성
-
-
-
-
-
-
-
-
-
-
-
-// const idInputBox = document.getElementById("idInputBox");
-// const pwInputBox = document.getElementById("pwInputBox");
-
-// const idRegex = /^(?=.*[a-z])(?=.*\d)[a-z\d]{8,20}$/; 
-// const pwRegex = /^(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*])[a-z\d!@#$%^&*]{8,20}$/; 
-
-
-
-// function createErrorMessage(message) {
-//     const errorMessage = document.createElement("div");
-//     // errorMessage.classList.add("errorMessage");
-//     errorMessage.textContent = message;
-//     console.log("Error Message Created:", errorMessage);
-//     return errorMessage;
-// }
-
-// function removeErrorMessage(input) {
-//     const nextElement = input.nextElementSibling;
-//     if (nextElement && nextElement.classList.contains("errorMessage")) {
-//         nextElement.remove();
-//     }
-// };
-
-// function validateInput(input, regex, message) {
-//     removeErrorMessage(input);
-//     if (!regex.test(input.value.trim())) {
-//         const errorMessage = createErrorMessage(message);
-//         input.insertAdjacentElement("afterend", errorMessage);
-//         return false;
-//     }
-//     else {
-//         input.style.borderColor = "#0056a3";
-//         return true;
-//     }
-// };
-
-// function validateIdInput() {
-//     validateInput(idInputBox, idRegex, "아이디는 영문 소문자, 숫자를 포함한 8~20자여야 합니다.");
-// }
-
-
-// function validatePwInput() {
-//     validateInput(pwInputBox, pwRegex, "비밀번호는 영문 소문자, 숫자, 특수문자를 포함한 8~20자여야 합니다.");
-// }
-
-// function handleLogin(event) {
-//     const isIdValid = validateInput(idInputBox, idRegex, "아이디는 영문 소문자, 숫자를 포함한 8~20자여야 합니다.");
-//     const isPwValid = validateInput(pwInputBox, pwRegex, "비밀번호는 영문 소문자, 숫자, 특수문자를 포함한 8~20자여야 합니다.");
-
-//     if (!isIdValid || !isPwValid) {
-//         event.preventDefault(); 
-//     }
-// }
-
-
-
-
-
-
-
-// const createErrorMessage = (message) => {
-//     const errorMessage = document.createElement("div");
-//     errorMessage.classList.add("errorMessage");
-//     errorMessage.textContent = message;
-
-//     console.log("Error Message Created:", errorMessage); 
-
-//     return errorMessage;
-// };
-
-
-
-// const removeErrorMessage = (input) => {
-//     const nextElement = input.nextElementSibling;
-//     if (nextElement && nextElement.classList.contains("errorMessage")) {
-//         nextElement.remove();
-//     }
-// };
-
-// const validateInput = (input, regex, message) => {
-//     removeErrorMessage(input);
-//     if (!regex.test(input.value.trim())) {
-//         const errorMessage = createErrorMessage(message);
-
-//         console.log("Inserting Error Message after:", input); 
-
-//         input.insertAdjacentElement("afterend", errorMessage);
-//         return false;
-//     } else {
-//         input.style.borderColor = "#0056a3"; 
-//         return true;
-//     }
-// };
-// // common 폴더에 넣어서 둘것
-
-// idInputBox.addEventListener("input", () => {
-//     validateInput(
-//         idInputBox,
-//         idRegex,
-//         "아이디는 영문 소문자, 숫자를 포함한 8~20자여야 합니다."
-//     );
-// });
-
-// pwInputBox.addEventListener("input", () => {
-//     validateInput(
-//         pwInputBox,
-//         pwRegex,
-//         "비밀번호는 영문 소문자, 숫자, 특수문자를 포함한 8~20자여야 합니다."
-//     );
-// });
-
-// loginButton.addEventListener("click", (event) => {
-//     const isIdValid = validateInput(
-//         idInputBox,
-//         idRegex,
-//         "아이디는 영문 소문자, 숫자를 포함한 8~20자여야 합니다."
-//     );
-
-//     const isPwValid = validateInput(
-//         pwInputBox,
-//         pwRegex,
-//         "비밀번호는 영문 소문자, 숫자, 특수문자를 포함한 8~20자여야 합니다."
-//     );
-
-//     if (!isIdValid || !isPwValid) {
-//         event.preventDefault(); 
-//     }
-// });

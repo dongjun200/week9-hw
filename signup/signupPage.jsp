@@ -38,8 +38,8 @@
                     <label>권한</label>
                     <select>
                         <option value="" disabled selected>권한 선택</option>
-                        <option value="marketing">팀장</option>
-                        <option value="management">팀원</option>
+                        <option value="teamLeader">팀장</option>
+                        <option value="teamMember">팀원</option>
                     </select>
                 </div>
             </div>

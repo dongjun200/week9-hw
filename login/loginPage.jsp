@@ -23,4 +23,5 @@
     </div>
 
     <script src="loginPage.js"></script>
+    
 </body> 
